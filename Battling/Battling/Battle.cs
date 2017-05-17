@@ -16,7 +16,14 @@ namespace Battling
             {
                 if (!try_battle_rule(BattleRules.win_on_skill_rule))
                 {
-                    try_battle_rule(BattleRules.win_on_overall_rule);
+                    if (!try_battle_rule(BattleRules.win_on_overall_rule))
+                    {
+                        if (fighter1.is_tie_rating(fighter2))
+                        {
+                            Losers.Add(fighter1);
+                            Losers.Add(fighter2);
+                        }
+                    }
                 }
             }
 

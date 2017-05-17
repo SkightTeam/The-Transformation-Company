@@ -59,4 +59,17 @@ namespace Battling.Specs
         It fighter2_should_be_a_loser = () => battle.Losers.ShouldContainOnly(fighter2);
 
     }
+
+    public class When_is_tie_overall_rating : BattleSpecs
+    {
+        private Establish context = () =>
+        {
+            fighter1 = Transformer.Create("Soundwave", 'D', 4, 4, 4, 4, 4, 4, 4, 4);
+            fighter2 = Transformer.Create("Bluestreak", 'A', 4, 4, 4, 4, 4, 4, 4, 4);
+        };
+
+        It fighter1_should_be_a_winner = () => battle.Winners.ShouldBeEmpty();
+        It fighter2_should_be_a_loser = () => battle.Losers.ShouldContainOnly(fighter1,fighter2);
+
+    }
 }
