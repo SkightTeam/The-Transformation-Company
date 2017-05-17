@@ -14,8 +14,8 @@ namespace Battling.Specs
     {
         private Establish context = () =>
         {
-            fighter1 = Transformer.Create('D', 1, 1, 1, 1, 1, 10, 1, 1);
-            fighter2 = Transformer.Create('A', 9, 9, 9, 9, 9, 6, 1, 1);
+            fighter1 = Transformer.Create("Soundwave",'D', 1, 1, 1, 1, 1, 10, 1, 1);
+            fighter2 = Transformer.Create("Bluestreak",'A', 9, 9, 9, 9, 9, 6, 1, 1);
         };
 
         It fighter1_should_not_be_a_winner = () => battle.Winners.ShouldNotContain(fighter1);
@@ -25,8 +25,8 @@ namespace Battling.Specs
     {
         private Establish context = () =>
         {
-            fighter1 = Transformer.Create('D', 4, 1, 1, 1, 1, 10, 1, 1);
-            fighter2 = Transformer.Create('A', 1, 9, 9, 9, 9, 6, 1, 1);
+            fighter1 = Transformer.Create("Soundwave",'D', 4, 1, 1, 1, 1, 10, 1, 1);
+            fighter2 = Transformer.Create("Bluestreak",'A', 1, 9, 9, 9, 9, 6, 1, 1);
         };
 
         It fighter1_should_be_a_winner = () => battle.Winners.ShouldContainOnly(fighter1);
@@ -38,8 +38,8 @@ namespace Battling.Specs
     {
         private Establish context = () =>
         {
-            fighter1 = Transformer.Create('D', 4, 4, 4, 4, 4, 4, 4, 4);
-            fighter2 = Transformer.Create('A', 4, 4, 4, 4, 4, 4, 4, 1);
+            fighter1 = Transformer.Create("Soundwave",'D', 4, 4, 4, 4, 4, 4, 4, 4);
+            fighter2 = Transformer.Create("Bluestreak",'A', 4, 4, 4, 4, 4, 4, 4, 1);
         };
 
         It fighter1_should_be_a_winner = () => battle.Winners.ShouldContainOnly(fighter1);
@@ -51,8 +51,8 @@ namespace Battling.Specs
     {
         private Establish context = () =>
         {
-            fighter1 = Transformer.Create('D', 4, 5, 4, 4, 4, 4, 4, 4);
-            fighter2 = Transformer.Create('A', 4, 4, 4, 4, 4, 4, 4, 4);
+            fighter1 = Transformer.Create("Soundwave",'D', 4, 5, 4, 4, 4, 4, 4, 4);
+            fighter2 = Transformer.Create("Bluestreak",'A', 4, 4, 4, 4, 4, 4, 4, 4);
         };
 
         It fighter1_should_be_a_winner = () => battle.Winners.ShouldContainOnly(fighter1);

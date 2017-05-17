@@ -12,8 +12,9 @@ namespace Battling
             Deception
         }
 
-        protected Transformer(int strength, int intelligence, int speed, int endurance, int rank, int courage, int firepower, int skill)
+        protected Transformer(string name, int strength, int intelligence, int speed, int endurance, int rank, int courage, int firepower, int skill)
         {
+            Name = name;
             Strength = strength;
             Intelligence = intelligence;
             Speed = speed;
@@ -24,6 +25,7 @@ namespace Battling
             Skill = skill;
         }
 
+        public string Name { get; private set; }
         public abstract Groups Group { get; }
         public int Strength { get; private set; }
         public int Intelligence { get; private set; }
@@ -34,16 +36,16 @@ namespace Battling
         public int Firepower { get; private set; }
         public int Skill { get; private set; }
 
-        public static Transformer Create(char group, int strength, int intelligence, int speed, int endurance,
+        public static Transformer Create(string name, char group, int strength, int intelligence, int speed, int endurance,
             int rank, int courage, int firepower, int skill)
         {
             switch (group)
             {
                 case 'A':
-                    return new Autobot(strength,intelligence,speed,endurance,rank,courage,firepower,skill);
+                    return new Autobot(name,strength, intelligence,speed,endurance,rank,courage,firepower,skill);
                     break;
                 case 'D':
-                    return new Deception(strength, intelligence, speed, endurance, rank, courage, firepower, skill);
+                    return new Deception(name,strength, intelligence, speed, endurance, rank, courage, firepower, skill);
             }
             throw new ArgumentOutOfRangeException(nameof(group),group,$"Group {group} is not acceptable.");
         }
