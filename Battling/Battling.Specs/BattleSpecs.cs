@@ -46,4 +46,17 @@ namespace Battling.Specs
         It fighter2_should_be_a_loser = () => battle.Losers.ShouldContainOnly(fighter2);
 
     }
+
+    public class When_one_with_more_overall_rating : BattleSpecs
+    {
+        private Establish context = () =>
+        {
+            fighter1 = Transformer.Create('D', 4, 5, 4, 4, 4, 4, 4, 4);
+            fighter2 = Transformer.Create('A', 4, 4, 4, 4, 4, 4, 4, 4);
+        };
+
+        It fighter1_should_be_a_winner = () => battle.Winners.ShouldContainOnly(fighter1);
+        It fighter2_should_be_a_loser = () => battle.Losers.ShouldContainOnly(fighter2);
+
+    }
 }
