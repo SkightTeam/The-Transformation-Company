@@ -11,6 +11,8 @@ namespace Battling
             Fighter2 = fighter2;
             Winners = new  List<Transformer>();
             Losers = new  List<Transformer>();
+            if(fighter1.is_special_name() && fighter2.is_special_name())
+                throw new BattleCrashException("Boom!");
 
             if (try_battle_rule(BattleRules.win_on_special_name))
                 return;

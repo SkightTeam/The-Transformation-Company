@@ -1,14 +1,16 @@
-﻿using Machine.Specifications;
+﻿using System;
+using Machine.Specifications;
 
 namespace Battling.Specs
 {
     public class BattleSpecs
     {
-        private Because of = () => battle = new Battle(fighter1, fighter2);
+        private Because of = () =>exception = Catch.Exception(()=> battle = new Battle(fighter1, fighter2));
 
         protected static Transformer fighter1;
         protected static Transformer fighter2;
         protected static Battle battle;
+        protected static Exception exception;
     }
     public class When_one_with_4_more_point_of_courage: BattleSpecs
     {
@@ -109,4 +111,17 @@ namespace Battling.Specs
         It fighter2_should_be_a_loser = () => battle.Losers.ShouldContainOnly(fighter1);
 
     }
+
+
+    public class When_two_leaders_meet_in_battle : BattleSpecs
+    {
+        private Establish context = () =>
+        {
+            fighter1 = Transformer.Create("Predaking", 'D', 1, 1, 1, 1, 1, 1, 1, 1);
+            fighter2 = Transformer.Create("Optimus Prime", 'A', 9, 9, 9, 9, 9, 9, 9, 9);
+        };
+
+        private It should_throw_crach_exception = () => exception.ShouldBeOfExactType<BattleCrashException>();
+    }
+
 }
