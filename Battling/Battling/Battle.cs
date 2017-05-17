@@ -12,10 +12,7 @@ namespace Battling
             Winners = new  List<Transformer>();
             Losers = new  List<Transformer>();
 
-            if (!try_battle_rule(BattleRules.win_on_courage_rule))
-            {
-                try_battle_rule(BattleRules.win_on_strength_rule);
-            }
+            try_battle_rule(BattleRules.win_on_courage_and_strength_rule);
 
         }
 
