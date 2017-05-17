@@ -11,5 +11,14 @@
             return false;
         }
 
+        public static bool win_on_skill_rule(this Transformer one, Transformer other)
+        {
+            if (one.Skill - other.Skill >= 3)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
