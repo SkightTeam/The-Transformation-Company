@@ -12,22 +12,22 @@ namespace Battling
             Winners = new  List<Transformer>();
             Losers = new  List<Transformer>();
 
-            if(!try_battle_rule(BattleRules.win_on_special_name))
+            if (try_battle_rule(BattleRules.win_on_special_name))
+                return;
+
+            if (try_battle_rule(BattleRules.win_on_courage_and_strength_rule))
+                return;
+
+            if (try_battle_rule(BattleRules.win_on_skill_rule))
+                return;
+
+            if (try_battle_rule(BattleRules.win_on_overall_rule))
+                return;
+
+            if (fighter1.is_tie_rating(fighter2))
             {
-                 if (!try_battle_rule(BattleRules.win_on_courage_and_strength_rule))
-            {
-                if (!try_battle_rule(BattleRules.win_on_skill_rule))
-                {
-                    if (!try_battle_rule(BattleRules.win_on_overall_rule))
-                    {
-                        if (fighter1.is_tie_rating(fighter2))
-                        {
-                            Losers.Add(fighter1);
-                            Losers.Add(fighter2);
-                        }
-                    }
-                }
-                }
+                Losers.Add(fighter1);
+                Losers.Add(fighter2);
             }
 
         }
