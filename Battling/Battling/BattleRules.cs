@@ -29,6 +29,20 @@
             return false;
         }
 
+        public static bool win_on_special_name(this Transformer one, Transformer other)
+        {
+            if (one.is_special_name())
+            {
+                return true;
+            }
+            return false;          
+        }
+
+        public static bool is_special_name(this Transformer transformer)
+        {
+            return transformer.Name.Equals("Predaking") || transformer.Name.Equals("Optimus Prime");
+        }
+
         public static bool is_tie_rating(this Transformer one, Transformer other)
         {
             return one.total_rating() == other.total_rating();

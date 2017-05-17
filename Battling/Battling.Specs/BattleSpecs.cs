@@ -72,4 +72,29 @@ namespace Battling.Specs
         It fighter2_should_be_a_loser = () => battle.Losers.ShouldContainOnly(fighter1,fighter2);
 
     }
+
+    public class When_a_special_name_Predaking_appear_in_battle : BattleSpecs
+    {
+        private Establish context = () =>
+        {
+            fighter1 = Transformer.Create("Predaking", 'D', 1, 1, 1, 1, 1, 1, 1, 1);
+            fighter2 = Transformer.Create("Bluestreak", 'A', 9, 9, 9, 9, 9, 9, 9, 9);
+        };
+
+        It fighter1_should_be_a_winner = () => battle.Winners.ShouldContainOnly(fighter1);
+        It fighter2_should_be_a_loser = () => battle.Losers.ShouldContainOnly(fighter2);
+
+    }
+    public class When_a_special_name_Optimus_Prime_appear_in_battle : BattleSpecs
+    {
+        private Establish context = () =>
+        {
+            fighter1 = Transformer.Create("Soundwave", 'D', 1, 1, 1, 1, 1, 1, 1, 1);
+            fighter2 = Transformer.Create("Optimus Prime", 'A', 9, 9, 9, 9, 9, 9, 9, 9);
+        };
+
+        It fighter1_should_be_a_winner = () => battle.Winners.ShouldContainOnly(fighter2);
+        It fighter2_should_be_a_loser = () => battle.Losers.ShouldContainOnly(fighter1);
+
+    }
 }

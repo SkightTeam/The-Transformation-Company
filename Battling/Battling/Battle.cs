@@ -12,7 +12,9 @@ namespace Battling
             Winners = new  List<Transformer>();
             Losers = new  List<Transformer>();
 
-            if (!try_battle_rule(BattleRules.win_on_courage_and_strength_rule))
+            if(!try_battle_rule(BattleRules.win_on_special_name))
+            {
+                 if (!try_battle_rule(BattleRules.win_on_courage_and_strength_rule))
             {
                 if (!try_battle_rule(BattleRules.win_on_skill_rule))
                 {
@@ -24,6 +26,7 @@ namespace Battling
                             Losers.Add(fighter2);
                         }
                     }
+                }
                 }
             }
 
