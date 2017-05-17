@@ -21,6 +21,18 @@ namespace Battling.Specs
         It fighter1_should_not_be_a_winner = () => battle.Winners.ShouldNotContain(fighter1);
 
     }
+
+    public class When_fighter2_with_4_more_point_of_courage_ : BattleSpecs
+    {
+        private Establish context = () =>
+        {
+            fighter1 = Transformer.Create("Soundwave", 'D', 9, 9, 9, 9, 9, 6, 9, 9);
+            fighter2 = Transformer.Create("Bluestreak", 'A', 1, 1, 1, 1, 1, 10, 1, 1);
+        };
+
+        It fighter1_should_not_be_a_winner = () => battle.Winners.ShouldNotContain(fighter2);
+
+    }
     public class When_one_with_3_more_point_of_strength : BattleSpecs
     {
         private Establish context = () =>

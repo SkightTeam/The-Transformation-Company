@@ -49,7 +49,7 @@ namespace Battling
             {
                 Winners.Add(Fighter2);
                 Losers.Add(Fighter1);
-                return false;
+                return true;
             }
             return false;
         }
