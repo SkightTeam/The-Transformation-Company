@@ -1,4 +1,8 @@
-﻿namespace Battling
+﻿using System;
+using System.ComponentModel;
+using System.Data;
+
+namespace Battling
 {
     public abstract class Transformer
     {
@@ -8,7 +12,40 @@
             Deception
         }
 
-        public abstract Groups Group { get; }
+        protected Transformer(int strength, int intelligence, int speed, int endurance, int rank, int courage, int firepower, int skill)
+        {
+            Strength = strength;
+            Intelligence = intelligence;
+            Speed = speed;
+            Endurance = endurance;
+            Rank = rank;
+            Courage = courage;
+            Firepower = firepower;
+            Skill = skill;
+        }
 
+        public abstract Groups Group { get; }
+        public int Strength { get; private set; }
+        public int Intelligence { get; private set; }
+        public int Speed { get; private set; }
+        public int Endurance { get; private set; }
+        public int Rank { get; private set; }
+        public int Courage { get; private set; }
+        public int Firepower { get; private set; }
+        public int Skill { get; private set; }
+
+        public static Transformer Create(char group, int strength, int intelligence, int speed, int endurance,
+            int rank, int courage, int firepower, int skill)
+        {
+            switch (group)
+            {
+                case 'A':
+                    return new Autobot(strength,intelligence,speed,endurance,rank,courage,firepower,skill);
+                    break;
+                case 'D':
+                    return new Deception(strength, intelligence, speed, endurance, rank, courage, firepower, skill);
+            }
+            throw new ArgumentOutOfRangeException(nameof(group),group,$"Group {group} is not acceptable.");
+        }
      }
 }
