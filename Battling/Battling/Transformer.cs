@@ -47,7 +47,7 @@ namespace Battling
                     return new Autobot(name,strength, intelligence,speed,endurance,rank,courage,firepower,skill);
                     break;
                 case 'D':
-                    return new Decepticons(name,strength, intelligence, speed, endurance, rank, courage, firepower, skill);
+                    return new Decepticon(name,strength, intelligence, speed, endurance, rank, courage, firepower, skill);
             }
             throw new ArgumentOutOfRangeException(nameof(group),group,$"Group {group} is not acceptable.");
         }
