@@ -42,5 +42,24 @@ namespace Battling
                 }
             }
         }
+
+        public void eliminate_all()
+        {
+            foreach (var member in members)
+            {
+                if (!eliminated_members.Contains(member))
+                {
+                    eliminated_members.Add(member);
+                }
+            }
+        }
+
+        public IEnumerable<T> EliminatedMembers { get { return eliminated_members; } }
+        public IEnumerable<T> Survivers { get { return members.Except(eliminated_members); } }
+
+        public override string ToString()
+        {
+            return typeof(T).Name;
+        }
     }
 }

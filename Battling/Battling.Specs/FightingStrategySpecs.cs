@@ -64,4 +64,5 @@ namespace Battling.Specs
             return Transformer.Create(name, group, 5, 5, 5, 5, rank, 5, 5, 5);
         }
     }
+   
 }
