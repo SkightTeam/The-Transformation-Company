@@ -11,7 +11,7 @@ namespace Battling
         public enum Groups
         {
             Autobot,
-            Deception
+            Decepticon
         }
 
         protected Transformer(string name, int strength, int intelligence, int speed, int endurance, int rank, int courage, int firepower, int skill)
@@ -47,7 +47,7 @@ namespace Battling
                     return new Autobot(name,strength, intelligence,speed,endurance,rank,courage,firepower,skill);
                     break;
                 case 'D':
-                    return new Deception(name,strength, intelligence, speed, endurance, rank, courage, firepower, skill);
+                    return new Decepticons(name,strength, intelligence, speed, endurance, rank, courage, firepower, skill);
             }
             throw new ArgumentOutOfRangeException(nameof(group),group,$"Group {group} is not acceptable.");
         }

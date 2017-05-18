@@ -44,8 +44,10 @@
     <Compile Include="Battle.cs" />
     <Compile Include="BattleCrashException.cs" />
     <Compile Include="BattleRules.cs" />
-    <Compile Include="Deception.cs" />
+    <Compile Include="Decepticons.cs" />
+    <Compile Include="FightingStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Team.cs" />
     <Compile Include="Transformer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

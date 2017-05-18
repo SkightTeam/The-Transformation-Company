@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleSpecs.cs" />
+    <Compile Include="FightingStrategySpecs.cs" />
     <Compile Include="MSpecSelfTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
