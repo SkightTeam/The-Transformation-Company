@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Battling
 {
@@ -15,7 +16,7 @@ namespace Battling
 
         public IEnumerator<T> GetEnumerator()
         {
-            return members.GetEnumerator();
+            return members.OrderByDescending(x=>x.Rank).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()

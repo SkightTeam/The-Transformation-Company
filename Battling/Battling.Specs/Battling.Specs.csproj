@@ -82,6 +82,7 @@
     <Compile Include="FightingStrategySpecs.cs" />
     <Compile Include="MSpecSelfTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

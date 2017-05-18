@@ -22,5 +22,7 @@ namespace Battling
             }
             return result;
         }
+
+        
     }
 }
